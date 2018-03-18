@@ -1,0 +1,8 @@
+/target/
+/bin/
+.classpath
+.settings
+.sonar
+database.test.properties
+.springBeans
+/.apt_generated/
