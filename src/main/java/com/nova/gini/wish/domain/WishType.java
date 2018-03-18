@@ -10,8 +10,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
- * Domain class for Wish type
- *
+ * Wish type is a domain class that represents a kind of Wish. Pre-defined types are Financial,
+ * Purchase, Skill etc.
  */
 @Entity
 @Table(name = "wish_type")
@@ -19,7 +19,7 @@ public class WishType {
 
     @Id
     @Column(nullable = false)
-    @SequenceGenerator(name = "SEQ_NEW_RESULT", sequenceName = "SEQ_NEW_WISH_TYPE", allocationSize = 50, initialValue = 1)
+    @SequenceGenerator(name = "SEQ_NEW_WISH_TYP", sequenceName = "SEQ_NEW_WISH_TYPE", allocationSize = 50, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_NEW_WISH_TYPE")
     private Long id;
 
