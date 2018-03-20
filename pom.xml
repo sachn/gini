@@ -1,12 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.nova.gini</groupId>
   <artifactId>gini</artifactId>
-  <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Gini</name>
-  <url>http://www.nova.com/gini</url>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -58,14 +57,34 @@
 
     <!-- Persistence/JPA -->
     <dependency>
-		<groupId>org.eclipse.persistence</groupId>
-		<artifactId>org.eclipse.persistence.jpa</artifactId>
-		<version>${eclipselink.version}</version>
-	</dependency>
+      <groupId>org.eclipse.persistence</groupId>
+      <artifactId>org.eclipse.persistence.jpa</artifactId>
+      <version>${eclipselink.version}</version>
+    </dependency>
+
+	<!-- MySQL -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+
+	<!-- Liquibase -->
+	<dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+    </dependency>
+
   </dependencies>
 
   <build>
     <finalName>${project.artifactId}</finalName>
+
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
 
   <profiles>
@@ -96,7 +115,7 @@
                   <groupId>org.eclipse.persistence</groupId>
                   <artifactId>org.eclipse.persistence.jpa</artifactId>
                   <version>${eclipselink.version}</version>
-                </dependency>
+              </dependency>
               </dependencies>
             </plugin>
           </plugins>
